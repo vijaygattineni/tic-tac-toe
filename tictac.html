@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="vijay" content="Tic Tac Toe">
+<meta charset="ISO-8859-1">
+<title>Tic Tac Toe Game</title>
+<style>
+body {background: #E8E8E8; margin: 0; padding: 0;}
+table.tictacboard {
+border: 2px solid #00A6AC;
+}
+table.tictacboard td {
+width:60px;
+height:60px;
+}
+
+table.tictacboard td.white {
+background-color:#FFFFFF;
+}
+</style>
+
+<script type="text/javascript">
+
+
+  function play(){
+       var audio = document.getElementById("audio");
+       audio.play();
+   }
+
+var status=1;
+var t;
+function put(id1){
+
+ clearTimeout(t);
+ t = setTimeout(logout, 10000);
+
+ 
+
+	
+	if(status==1){
+	
+		if(((document.getElementById(id1).innerHTML)!="X")&&((document.getElementById(id1).innerHTML)!="O")){
+		document.getElementById(id1).innerHTML="X";
+		status=0;
+	
+		}
+		else {
+
+			alert("You cannot override");
+			count--;
+		}
+		
+	}
+	
+	else{
+		if((document.getElementById(id1).innerHTML)!="X"&&(document.getElementById(id1)).innerHTML!="O"){
+		document.getElementById(id1).innerHTML="O";
+		status=1;
+	
+		}else {
+			alert("You cannot ovveride");
+			count--;
+		}
+		
+	}
+	
+}
+
+function logout()
+{
+if(status==0){
+			alert("Oops two time expired, Player one Won !");
+			reloadPage();
+		}else{
+			alert("Oops one time expired, Player two Won !");
+			reloadPage();
+		}
+}
+
+
+function reloadPage()
+  {
+  location.reload();
+  }
+  
+  
+function validate1(){
+	
+	var val1=document.getElementById("a1").innerHTML;
+	var val2=document.getElementById("a2").innerHTML;
+	var val3=document.getElementById("a3").innerHTML;
+	var val4=document.getElementById("b1").innerHTML;
+	var val5=document.getElementById("b2").innerHTML;
+	var val7=document.getElementById("c1").innerHTML;
+	var val9=document.getElementById("c3").innerHTML;
+	
+	
+	
+	if(val1==val2&&val2==val3){
+		if(status==0){
+			alert("Congrats Player one Won !");
+		}else{
+			alert("Congrats Player two Won !");
+		}
+	}
+	
+	else if(val1==val4&&val4==val7){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	else if(val1==val5&&val5==val9){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	
+}
+
+function validate2(){
+	var val1=document.getElementById("a1").innerHTML;
+	var val2=document.getElementById("a2").innerHTML;
+	var val3=document.getElementById("a3").innerHTML;
+	var val5=document.getElementById("b2").innerHTML;
+	var val8=document.getElementById("c2").innerHTML;
+	
+	if(val1==val2&&val2==val3){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	else if(val2==val5&&val5==val8){  
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+
+}
+
+function validate3(){
+	var val1=document.getElementById("a1").innerHTML;
+	var val2=document.getElementById("a2").innerHTML;
+	var val3=document.getElementById("a3").innerHTML;
+	var val5=document.getElementById("b2").innerHTML;
+	var val6=document.getElementById("b3").innerHTML;
+	var val7=document.getElementById("c1").innerHTML;
+	var val9=document.getElementById("c3").innerHTML;
+	
+	if(val1==val2&&val2==val3){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	
+	else if(val3==val5&&val5==val7){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	else if(val3==val6&&val6==val9){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+
+}
+
+function validate4(){
+	var val1=document.getElementById("a1").innerHTML;
+	var val4=document.getElementById("b1").innerHTML;
+	var val5=document.getElementById("b2").innerHTML;
+	var val6=document.getElementById("b3").innerHTML;
+	var val7=document.getElementById("c1").innerHTML;
+	
+	if(val1==val4&&val4==val7){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	else if(val4==val5&&val5==val6){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+
+}
+
+function validate5(){
+	var val1=document.getElementById("a1").innerHTML;
+	var val2=document.getElementById("a2").innerHTML;
+	var val3=document.getElementById("a3").innerHTML;
+	var val4=document.getElementById("b1").innerHTML;
+	var val5=document.getElementById("b2").innerHTML;
+	var val6=document.getElementById("b3").innerHTML;
+	var val7=document.getElementById("c1").innerHTML;
+	var val8=document.getElementById("c2").innerHTML;
+	var val9=document.getElementById("c3").innerHTML;
+	
+	if(val1==val5&&val5==val9){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	
+	else if(val3==val5&&val5==val7){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	else if(val2==val5&&val5==val8){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	else if(val4==val5&&val5==val6){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+
+}
+
+function validate6(){
+	var val3=document.getElementById("a3").innerHTML;
+	var val4=document.getElementById("b1").innerHTML;
+	var val5=document.getElementById("b2").innerHTML;
+	var val6=document.getElementById("b3").innerHTML;
+	var val9=document.getElementById("c3").innerHTML;
+	
+	if(val4==val5&&val5==val6){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	else if(val3==val6&&val6==val9){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+
+}
+
+function validate7(){	
+	var val1=document.getElementById("a1").innerHTML;
+	var val3=document.getElementById("a3").innerHTML;
+	var val4=document.getElementById("b1").innerHTML;
+	var val5=document.getElementById("b2").innerHTML;
+	var val7=document.getElementById("c1").innerHTML;
+	var val8=document.getElementById("c2").innerHTML;
+	var val9=document.getElementById("c3").innerHTML;
+	
+	if(val1==val4&&val4==val7){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	
+	else if(val3==val5&&val5==val7){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	else if(val7==val8&&val8==val9){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+
+}
+
+function validate8(){
+
+	var val2=document.getElementById("a2").innerHTML;
+	var val5=document.getElementById("b2").innerHTML;
+	var val7=document.getElementById("c1").innerHTML;
+	var val8=document.getElementById("c2").innerHTML;
+	var val9=document.getElementById("c3").innerHTML;
+	
+	if(val2==val5&&val5==val8){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	else if(val7==val8&&val8==val9){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+
+}
+
+function validate9(){
+	var val1=document.getElementById("a1").innerHTML;
+	var val3=document.getElementById("a3").innerHTML;
+	var val5=document.getElementById("b2").innerHTML;
+	var val6=document.getElementById("b3").innerHTML;
+	var val7=document.getElementById("c1").innerHTML;
+	var val8=document.getElementById("c2").innerHTML;
+	var val9=document.getElementById("c3").innerHTML;
+	
+	if(val1==val5&&val5==val9){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	
+	else if(val3==val6&&val6==val9){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+	else if(val7==val8&&val8==val9){
+		if(status==0){
+			alert("Congrats Player one Won !");
+			reloadPage();
+		}else{
+			alert("Congrats Player two Won !");
+			reloadPage();
+		}
+	}
+
+}
+
+var time=setInterval(function(){mytimer()},1000);
+
+function mytimer(){
+var d=new Date();
+var t=d.toLocaleTimeString();
+document.getElementById("clock").innerHTML=t;
+}
+
+function play(){
+ var audio= document.getElementById("audio");
+ audio.play();
+}
+
+</script>
+
+
+</head>
+<body >
+
+<audio id="audio" src="click.mp3" ></audio>
+ 
+ 
+ 
+ <h1 align="center">Tic-Tac-Toe<h1>
+<h3 align="center">Game Board<h3>
+<h3>Player One - X</h3>
+<h3>Player Two - O</h3>
+Time
+<p id="clock"></p>
+
+
+<table align="center"class="tictacboard" border="1">
+
+<tr>
+<td class="white" id="1" onclick="put('a1');validate1();play();"> <span id="a1" style="font-size:25px"></span>  </td>
+<td class="white" id="2" onclick="put('a2');validate2();play();"> <span id="a2" style="font-size:25px"></span>   </td>
+<td class="white" id="3" onclick="put('a3');validate3();play();"> <span id="a3" style="font-size:25px"></span>   </td>
+</tr>
+
+
+
+<tr>
+<td class="white" id="4" onclick="put('b1');validate4();play();"> <span id="b1" style="font-size:25px"></span>  </td>
+<td class="white" id="5" onclick="put('b2');validate5();play();"> <span id="b2" style="font-size:25px"></span>   </td>
+<td class="white" id="6" onclick="put('b3');validate6();play();"> <span id="b3" style="font-size:25px"></span>   </td>
+</tr>
+
+<tr>
+<td class="white" id="7" onclick="put('c1');validate7();play();"> <span id="c1" style="font-size:25px"></span>  </td>
+<td class="white" id="8" onclick="put('c2');validate8();play();"> <span id="c2" style="font-size:25px"></span>   </td>
+<td class="white" id="9" onclick="put('c3');validate9();play();"> <span id="c3" style="font-size:25px"></span>   </td>
+</tr>
+
+
+</table>
+<input type="button" value="Restart" onclick="play();reloadPage();"><br><br>
+
+</body>
+</html>
